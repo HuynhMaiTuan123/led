@@ -1,0 +1,29 @@
+<?php
+   if (isset($_GET["bat"])) 
+    {
+	    $myfile = fopen("trangthaiLED.txt", "w");
+	    fwrite($myfile,"bat");
+	    fclose($myfile);
+	    echo "Đã bật LED";
+    }
+   else if (isset($_GET["tat"])) 
+    {
+	    $myfile = fopen("trangthaiLED.txt", "w");
+	    fwrite($myfile,"tat");
+	    fclose($myfile);
+	    echo "Đã tắt LED";
+    }
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Điều khiển LED</title>
+</head>
+<body>
+	<form method="GET" action="index.php"><input type="submit" name="bat" value="Bật"></form>
+	<form method="GET" action="index.php"><input type="submit" name="tat" value="Tắt"></form>
+	 
+</body>
+</html>
